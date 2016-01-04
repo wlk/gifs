@@ -1,0 +1,16 @@
+<ion-navbar *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <icon menu></icon>
+  </button>
+  <ion-title>Item Details</ion-title>
+</ion-navbar>
+
+<ion-content>
+ <div *ngIf="selectedItem" class="selection">
+    <b>{{selectedItem.title}}</b>
+    <icon name="{{selectedItem.icon}}"></icon>
+    <div>
+      You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+  </div>
+</ion-content>
