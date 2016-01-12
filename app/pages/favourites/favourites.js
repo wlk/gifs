@@ -3,7 +3,7 @@ import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 @Page({
-    templateUrl: 'build/pages/list/favourites.html'
+    templateUrl: 'build/pages/favourites/favourites.html'
 })
 export class FavouritesPage {
     constructor(app:IonicApp, nav:NavController, navParams:NavParams, http:Http) {

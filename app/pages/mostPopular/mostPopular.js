@@ -3,7 +3,7 @@ import {Http} from 'angular2/http';
 import 'rxjs/add/operator/map';
 
 @Page({
-    templateUrl: 'build/pages/list/mostPopular.html'
+    templateUrl: 'build/pages/mostPopular/mostPopular.html'
 })
 export class MostPopularPage {
     constructor(app:IonicApp, nav:NavController, navParams:NavParams, http:Http) {

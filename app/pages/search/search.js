@@ -1,7 +1,7 @@
 import {Page, NavController} from 'ionic/ionic';
 
 @Page({
-    templateUrl: 'build/pages/hello-ionic/Search.html'
+    templateUrl: 'build/pages/search/search.html'
 })
 export class SearchPage {
     constructor(nav:NavController) {
