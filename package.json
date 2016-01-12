@@ -22,8 +22,16 @@
   },
   "name": "gifs",
   "description": "gifs: An Ionic project",
-  "cordovaPlugins": [],
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard"
+  ],
   "cordovaPlatforms": [
-    "android"
+    "android",
+    "ios"
   ]
 }
