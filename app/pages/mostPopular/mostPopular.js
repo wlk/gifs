@@ -11,15 +11,11 @@ export class MostPopularPage {
         this.http = http;
         this.gifs = null;
 
-        // If we navigated to this page, we will have an item available as a nav param
-        this.selectedItem = navParams.get('item');
-
         this.http.get('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC').map(res => res.json()).subscribe(data => {
-                console.log("gifs loaded");
-                this.gifs = data.data.children;
+                this.gifs = data.data;
             },
             err => {
-                console.log("Oops!");
+                console.log("unable to load gifs");
             });
     }
 }

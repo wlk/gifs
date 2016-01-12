@@ -17,12 +17,11 @@ class MyApp {
 
         // set our app's pages
         this.pages = [
+            {title: 'Top GIFs', component: MostPopularPage},
             {title: 'Search', component: SearchPage},
-            {title: 'Most Popular', component: MostPopularPage},
             {title: 'Favourites', component: FavouritesPage}
         ];
 
-        // make SearchPage the root (or first) page
         this.rootPage = MostPopularPage;
     }
 
@@ -30,18 +29,6 @@ class MyApp {
         this.platform.ready().then(() => {
             console.log('Platform ready');
 
-            // The platform is now ready. Note: if this callback fails to fire, follow
-            // the Troubleshooting guide for a number of possible solutions:
-            //
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            //
-            // First, let's hide the keyboard accessory bar (only works natively) since
-            // that's a better default:
-            //
-            //
-            // For example, we might change the StatusBar color. This one below is
-            // good for light backgrounds and dark text;
             if (typeof StatusBar !== 'undefined') {
                 StatusBar.styleDefault();
             }
@@ -49,10 +36,9 @@ class MyApp {
     }
 
     openPage(page) {
-        // close the menu when clicking a link from the menu
-        this.app.getComponent('leftMenu').close();
-        // navigate to the new page if it is not the current page
         let nav = this.app.getComponent('nav');
-        nav.setRoot(page.component);
+        nav.setRoot(page.component).then(() => {
+            this.app.getComponent('leftMenu').close();
+        });
     }
 }

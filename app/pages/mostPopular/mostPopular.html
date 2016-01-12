@@ -1,17 +1,14 @@
 <ion-navbar *navbar>
     <button menuToggle>
-        <icon menu></icon>
+        <ion-icon menu></ion-icon>
     </button>
-    <ion-title>Trending GIFs</ion-title>
+    <ion-title>Top GIFs</ion-title>
 </ion-navbar>
 
 <ion-content>
     <ion-list>
         <div ion-item *ngFor="#gif of gifs">
-<!--
-            <p>{{gif.fixed_width_still}}</p>
--->
-            <img [src]="gif.fixed_width_still.url" />
+            <img [src]="gif.images.fixed_width_still.url"/>
         </div>
     </ion-list>
 </ion-content>
