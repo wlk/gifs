@@ -23,7 +23,7 @@ class MyApp {
             {title: 'Favourites', component: FavouritesPage}
         ];
 
-        this.rootPage = SearchPage;
+        this.rootPage = MostPopularPage;
     }
 
     initializeApp() {
