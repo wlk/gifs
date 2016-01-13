@@ -1,7 +1,9 @@
-div.selection {
-  font-size: 22px;
-  display: block;
-  text-align: center;
-  padding-top: 5%;
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
+.half-width {
+  width: 48vw;
+}

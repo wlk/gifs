@@ -1,4 +1,4 @@
-<ion-navbar *navbar>
+<ion-navbar *navbar primary>
     <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
@@ -6,17 +6,9 @@
 </ion-navbar>
 
 <ion-content>
-    <ion-list no-lines>
+    <ion-list>
         <ion-item *ngFor="#gif of gifs" (click)="displayDetails(gif)">
-            <button clear>
-                <img [src]="gif.images.fixed_width_still.url"/>
-            </button>
-
-            <!--<ion-item-options>
-                <button favorite (click)="addFavorite(gif)">
-                    Favorite
-                </button>
-            </ion-item-options>-->
+            <img class="gif" [src]="gif.images.fixed_width_still.url"/>
         </ion-item>
     </ion-list>
 </ion-content>
