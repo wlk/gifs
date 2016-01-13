@@ -6,5 +6,10 @@ import {Page, NavController} from 'ionic/ionic';
 export class SearchPage {
     constructor(nav:NavController) {
         this.nav = nav;
+        this.searchQuery = '';
+    }
+
+    searchGIFs(event) {
+        console.log("searching for " + event.value)
     }
 }

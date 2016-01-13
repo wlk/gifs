@@ -9,7 +9,7 @@
     <img class="gif" [src]="gif.images.original.webp"/>
 
     <div id="footer">
-        <button class="half-width"><ion-icon name="star"></ion-icon>Favourite</button>
-        <button class="half-width"><ion-icon name="share"></ion-icon>Share</button>
+        <button class="half-width" (click)="addToFavourites()"><ion-icon name="star"></ion-icon>Favourite</button>
+        <button class="half-width" (click)="share(item)"><ion-icon name="share"></ion-icon>Share</button>
     </div>
 </ion-content>

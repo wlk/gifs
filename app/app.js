@@ -4,13 +4,14 @@ import {SearchPage} from './pages/search/search';
 import {MostPopularPage} from './pages/mostPopular/mostPopular';
 import {FavouritesPage} from './pages/favourites/favourites';
 
+import {GifSearch} from './providers/gif-search';
+
 @App({
-    templateUrl: 'build/app.html'
+    templateUrl: 'build/app.html',
+    providers: [GifSearch]
 })
 class MyApp {
     constructor(app:IonicApp, platform:Platform) {
-
-        // set up our app
         this.app = app;
         this.platform = platform;
         this.initializeApp();
