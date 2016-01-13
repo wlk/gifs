@@ -6,9 +6,13 @@
 </ion-navbar>
 
 <ion-content>
-        <ion-list>
-            <ion-item *ngFor="#gif of gifs" (click)="displayDetails(gif)">
-                <img class="gif" [src]="gif.images.fixed_width_still.url"/>
-            </ion-item>
-        </ion-list>
+    <ion-list [hidden]="!areGifsLoadedOk">
+        <ion-item *ngFor="#gif of gifs" (click)="displayDetails(gif)">
+            <img class="gif" [src]="gif.images.fixed_width_still.url"/>
+        </ion-item>
+    </ion-list>
+
+    <ion-list-header [hidden]="areGifsLoadedOk">
+        No GIFs found - please try later
+    </ion-list-header>
 </ion-content>

@@ -10,7 +10,7 @@ export class MostPopularPage {
         this.nav = nav;
         this.gifSearch = gifSearch;
         this.gifs = [];
-        //this.loadedData = false;
+        this.areGifsLoadedOk = false;
 
         this.updateList();
     }
@@ -18,11 +18,10 @@ export class MostPopularPage {
     updateList() {
         console.log("updateList");
 
-        this.gifSearch.initTop().then(gifs => {
-            this.gifs = gifs;
-            //this.loadedData = true;
+        this.gifSearch.initTop().then(data => {
+            this.gifs = data;
+            this.areGifsLoadedOk = data.length > 0;
             console.log("updateList returned");
-
         });
     }
 
