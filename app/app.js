@@ -40,4 +40,6 @@ class MyApp {
             this.app.getComponent('leftMenu').close();
         });
     }
+
+
 }

@@ -1,4 +1,4 @@
-import {IonicApp, Page, NavController, NavParams} from 'ionic/ionic';
+import {IonicApp, Page, NavController, NavParams, Platform} from 'ionic/ionic';
 import {ItemDetailsPage} from '../item-details/item-details';
 import {GifSearch} from '../../providers/gif-search';
 
@@ -6,12 +6,16 @@ import {GifSearch} from '../../providers/gif-search';
     templateUrl: 'build/pages/mostPopular/mostPopular.html'
 })
 export class MostPopularPage {
-    constructor(app:IonicApp, nav:NavController, navParams:NavParams, gifSearch:GifSearch) {
+    constructor(app:IonicApp, nav:NavController, navParams:NavParams, gifSearch:GifSearch, platform:Platform) {
         this.nav = nav;
         this.gifSearch = gifSearch;
+        this.platform = platform;
         this.gifs = [];
 
         this.updateList();
+
+        /*this.platform.onHardwareBackButton(e => this.nav.pop());*/
+
     }
 
     shouldDisplayError() {
