@@ -10,9 +10,12 @@ export class MostPopularPage {
         this.nav = nav;
         this.gifSearch = gifSearch;
         this.gifs = [];
-        this.areGifsLoadedOk = false;
 
         this.updateList();
+    }
+
+    shouldDisplayError() {
+        return !(typeof this.gifs !== 'undefined' && this.gifs.hasOwnProperty('length') && this.gifs.length > 0)
     }
 
     updateList() {
@@ -20,7 +23,6 @@ export class MostPopularPage {
 
         this.gifSearch.initTop().then(data => {
             this.gifs = data;
-            this.areGifsLoadedOk = data.length > 0;
             console.log("updateList returned");
         });
     }

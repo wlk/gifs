@@ -6,5 +6,15 @@
 </ion-navbar>
 
 <ion-content>
-    <ion-searchbar [(ngModel)]="searchQuery" (input)="searchGIFs($event)"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="searchGIFs()" placeholder="Search"></ion-searchbar>
+
+    <ion-list [hidden]="shouldDisplayError()">
+        <ion-item *ngFor="#gif of gifs" (click)="displayDetails(gif)">
+            <img class="gif" [src]="gif.images.fixed_width_still.url"/>
+        </ion-item>
+    </ion-list>
+
+    <ion-list-header [hidden]="!shouldDisplayError()">
+        No GIFs found
+    </ion-list-header>
 </ion-content>
