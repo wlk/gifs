@@ -6,7 +6,8 @@
 </ion-navbar>
 
 <ion-content>
-    <img class="gif" [src]="gif.images.original.webp"/>
+    <img class="gif" [src]="gif.images.downsized.url" />
+
     <div id="footer">
         <button class="half-width" (click)="addToFavourites()">
             <ion-icon name="star"></ion-icon>
