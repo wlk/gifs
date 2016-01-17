@@ -9,12 +9,12 @@
     <img class="gif" [src]="gif.images.downsized.url"/>
 
     <div id="footer">
-        <button class="half-width" (click)="addToFavourites()">
+        <button class="half-width" (click)="addToFavourites()" *ngIf="!isFavourite">
             <ion-icon name="star-outline"></ion-icon>
             Star
         </button>
 
-        <button class="half-width" (click)="removeFromFavourites()">
+        <button class="half-width" (click)="removeFromFavourites()" *ngIf="isFavourite">
             <ion-icon name="star"></ion-icon>
             Unstar
         </button>

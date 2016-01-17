@@ -22,11 +22,17 @@ export class ItemDetailsPage {
     }
 
     addToFavourites() {
-        this.favourites.addToFavourites(this.gif);
+        if(!this.checkIsFavourite()){
+            this.favourites.addToFavourites(this.gif);
+            this.checkIsFavourite();
+        }
     }
 
     removeFromFavourites() {
-        this.favourites.removeFromFavourites(this.gif);
+        if(this.checkIsFavourite()){
+            this.favourites.removeFromFavourites(this.gif);
+            this.checkIsFavourite();
+        }
     }
 
     share() {
