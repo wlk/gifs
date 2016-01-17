@@ -9,10 +9,16 @@
     <img class="gif" [src]="gif.images.downsized.url" />
 
     <div id="footer">
-        <button class="half-width" (click)="addToFavourites()">
-            <ion-icon name="star"></ion-icon>
-            Favourite
+        <button class="half-width" (click)="addToFavourites()" >
+            <ion-icon name="star-outline"></ion-icon>
+            Star
         </button>
+
+        <button class="half-width" (click)="addToFavourites()" >
+            <ion-icon name="star"></ion-icon>
+            Unstar
+        </button>
+
         <button class="half-width" (click)="share(item)">
             <ion-icon name="share"></ion-icon>
             Share
