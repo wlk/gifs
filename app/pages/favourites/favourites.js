@@ -6,11 +6,16 @@ import {FavouritesDB} from '../../providers/favouritesDB';
     templateUrl: 'build/pages/favourites/favourites.html'
 })
 export class FavouritesPage {
-    constructor(app:IonicApp, nav:NavController, navParams:NavParams, favourites: FavouritesDB) {
+    constructor(app:IonicApp, nav:NavController, navParams:NavParams, favourites:FavouritesDB) {
         this.nav = nav;
         this.favourites = favourites;
+
+        this.refreshFavourites();
+    }
+
+    refreshFavourites() {
         this.favourites.getFavourites().then(data => {
-            this.gifs =  data;
+            this.gifs = data;
         });
     }
 

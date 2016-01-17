@@ -24,6 +24,42 @@ export class FavouritesDB {
         });
     }
 
+    isFavourite(gifId) {
+        return new Promise(resolve => {
+            this.platform.ready().then(() => {
+                console.log("is favourite");
+                this.storage.query("SELECT id FROM favourites WHERE id = '" + gifId + "'").then((data) => {
+                        resolve(data.res.rows.length > 0);
+                    },
+                    (error) => {
+                        console.log("ERROR -> " + JSON.stringify(error.err));
+                    });
+            });
+        });
+    }
+
+    addToFavourites(gif) {
+        this.platform.ready().then(() => {
+            console.log("adding gif to favourites");
+            this.storage.query("INSERT INTO favourites (id, url, downsized_url, original_url, fixed_width_still_url) " +
+                    "VALUES('" + gif.id + "', '" + gif.url + "','" + gif.images.downsized.url + "','" + gif.images.original.url + "','" + gif.images.fixed_width_still.url + "') ")
+                .then(
+                    (data) => {
+                        console.log(JSON.stringify(data.res));
+                    },
+                    (error) => {
+                        console.log("ERROR -> " + JSON.stringify(error.err));
+                    });
+        });
+    }
+
+    removeFromFavourites(gif) {
+        this.platform.ready().then(() => {
+            console.log("removing gif from favourites");
+            this.storage.query("DELETE FROM favourites WHERE id = '" + gif.id + "'");
+        });
+    }
+
     getFavourites() {
         return new Promise(resolve => {
             this.platform.ready().then(() => {
