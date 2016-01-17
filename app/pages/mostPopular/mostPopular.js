@@ -1,15 +1,14 @@
-import {IonicApp, Page, NavController, NavParams, Platform} from 'ionic/ionic';
+import {IonicApp, Page, NavController, NavParams} from 'ionic/ionic';
 import {ItemDetailsPage} from '../item-details/item-details';
-import {GifSearch} from '../../providers/gif-search';
+import {Giphy} from '../../providers/giphy';
 
 @Page({
     templateUrl: 'build/pages/mostPopular/mostPopular.html'
 })
 export class MostPopularPage {
-    constructor(app:IonicApp, nav:NavController, navParams:NavParams, gifSearch:GifSearch, platform:Platform) {
+    constructor(app:IonicApp, nav:NavController, navParams:NavParams, giphy:Giphy) {
         this.nav = nav;
-        this.gifSearch = gifSearch;
-        this.platform = platform;
+        this.giphy = giphy;
         this.gifs = [];
 
         this.updateList();
@@ -22,7 +21,7 @@ export class MostPopularPage {
     updateList() {
         console.log("updateList");
 
-        this.gifSearch.initTop().then(data => {
+        this.giphy.initTop().then(data => {
             this.gifs = data;
             console.log("updateList returned");
         });

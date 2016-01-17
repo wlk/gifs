@@ -2,7 +2,7 @@ import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 
 @Injectable()
-export class GifSearch {
+export class Giphy {
     constructor(http:Http) {
         this.http = http;
         this.apiKey = "dc6zaTOxFJmzC";

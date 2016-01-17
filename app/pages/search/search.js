@@ -1,15 +1,15 @@
 import {IonicApp, Page, NavController, NavParams} from 'ionic/ionic';
 import {ItemDetailsPage} from '../item-details/item-details';
-import {GifSearch} from '../../providers/gif-search';
+import {Giphy} from '../../providers/giphy';
 
 @Page({
     templateUrl: 'build/pages/search/search.html'
 })
 export class SearchPage {
-    constructor(app:IonicApp, nav:NavController, navParams:NavParams, gifSearch:GifSearch) {
+    constructor(app:IonicApp, nav:NavController, navParams:NavParams, giphy:Giphy) {
         this.nav = nav;
         this.searchQuery = '';
-        this.gifSearch = gifSearch;
+        this.giphy = giphy;
         this.gifs = [];
     }
 
@@ -19,7 +19,7 @@ export class SearchPage {
 
     searchGIFs() {
         console.log("searchGIFs");
-        this.gifSearch.search(this.searchQuery).then(data => {
+        this.giphy.search(this.searchQuery).then(data => {
             this.gifs = data;
             console.log("searchGIFs returned");
         });
