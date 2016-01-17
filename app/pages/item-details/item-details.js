@@ -22,14 +22,14 @@ export class ItemDetailsPage {
     }
 
     addToFavourites() {
-        if(!this.checkIsFavourite()){
+        if(!this.isFavourite){
             this.favourites.addToFavourites(this.gif);
             this.checkIsFavourite();
         }
     }
 
     removeFromFavourites() {
-        if(this.checkIsFavourite()){
+        if(this.isFavourite){
             this.favourites.removeFromFavourites(this.gif);
             this.checkIsFavourite();
         }
