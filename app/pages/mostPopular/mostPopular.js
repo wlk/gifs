@@ -13,9 +13,6 @@ export class MostPopularPage {
         this.gifs = [];
 
         this.updateList();
-
-        /*this.platform.onHardwareBackButton(e => this.nav.pop());*/
-
     }
 
     shouldDisplayError() {
