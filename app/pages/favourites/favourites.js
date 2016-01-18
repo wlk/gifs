@@ -7,6 +7,10 @@ import {FavouritesDB} from '../../providers/favouritesDB';
 })
 export class FavouritesPage {
     constructor(app:IonicApp, nav:NavController, navParams:NavParams, favourites:FavouritesDB) {
+        if (typeof analytics !== 'undefined') {
+            analytics.trackView("FavouritesPage view");
+        }
+
         this.nav = nav;
         this.favourites = favourites;
 

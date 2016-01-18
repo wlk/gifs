@@ -6,6 +6,10 @@ import {FavouritesDB} from '../../providers/favouritesDB';
 })
 export class ItemDetailsPage {
     constructor(navParams:NavParams, platform:Platform, favourites:FavouritesDB) {
+        if (typeof analytics !== 'undefined') {
+            analytics.trackView("ItemDetailsPage view");
+        }
+
         this.navParams = navParams;
         this.platform = platform;
         this.gif = navParams.data;
@@ -22,14 +26,14 @@ export class ItemDetailsPage {
     }
 
     addToFavourites() {
-        if(!this.isFavourite){
+        if (!this.isFavourite) {
             this.favourites.addToFavourites(this.gif);
             this.checkIsFavourite();
         }
     }
 
     removeFromFavourites() {
-        if(this.isFavourite){
+        if (this.isFavourite) {
             this.favourites.removeFromFavourites(this.gif);
             this.checkIsFavourite();
         }
@@ -41,6 +45,5 @@ export class ItemDetailsPage {
         } else {
             window.plugins.socialsharing.share(this.gif.url, null, null, null);
         }
-
     }
 }

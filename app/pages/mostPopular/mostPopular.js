@@ -7,6 +7,10 @@ import {Giphy} from '../../providers/giphy';
 })
 export class MostPopularPage {
     constructor(app:IonicApp, nav:NavController, navParams:NavParams, giphy:Giphy) {
+        if (typeof analytics !== 'undefined') {
+            analytics.trackView("MostPopularPage view");
+        }
+
         this.nav = nav;
         this.giphy = giphy;
         this.gifs = [];

@@ -67,7 +67,6 @@ export class FavouritesDB {
                         var favourites = [];
                         if (data.res.rows.length > 0) {
                             for (var i = 0; i < data.res.rows.length; i++) {
-                                console.log("adding gif to display: " + JSON.stringify(data.res.rows.item(i)));
                                 favourites.push({
                                     id: data.res.rows.item(i).id,
                                     url: data.res.rows.item(i).url,

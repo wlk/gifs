@@ -7,6 +7,10 @@ import {Giphy} from '../../providers/giphy';
 })
 export class SearchPage {
     constructor(app:IonicApp, nav:NavController, navParams:NavParams, giphy:Giphy) {
+        if (typeof analytics !== 'undefined') {
+            analytics.trackView("SearchPage view");
+        }
+
         this.nav = nav;
         this.searchQuery = '';
         this.giphy = giphy;

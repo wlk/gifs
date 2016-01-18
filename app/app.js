@@ -32,6 +32,16 @@ class MyApp {
             if (typeof StatusBar !== 'undefined') {
                 StatusBar.styleDefault();
             }
+
+            if (typeof analytics !== 'undefined') {
+                if (device.platform === "Android") {
+                    analytics.startTrackerWithId("UA-54524356-18"); //Android
+                } else {
+                    analytics.startTrackerWithId("UA-54524356-19"); //iOS
+                }
+            } else { // Windows
+                console.log("Google Analytics Unavailable");
+            }
         });
     }
 
