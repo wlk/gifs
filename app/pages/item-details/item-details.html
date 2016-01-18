@@ -1,27 +1,27 @@
 <ion-navbar *navbar primary>
+    <ion-title>GIF</ion-title>
+
     <button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>GIF</ion-title>
+
+    <ion-buttons end>
+        <button (click)="addToFavourites()" *ngIf="!isFavourite">
+            <ion-icon name="star-outline"></ion-icon>
+        </button>
+
+        <button (click)="removeFromFavourites()" *ngIf="isFavourite">
+            <ion-icon name="star"></ion-icon>
+        </button>
+
+        <button (click)="share(item)">
+            <ion-icon name="share"></ion-icon>
+            Share
+        </button>
+    </ion-buttons>
+
 </ion-navbar>
 
 <ion-content>
     <img class="gif" [src]="gif.images.downsized.url"/>
-
-    <div id="footer">
-        <button class="half-width" (click)="addToFavourites()" *ngIf="!isFavourite">
-            <ion-icon name="star-outline"></ion-icon>
-            Star
-        </button>
-
-        <button class="half-width" (click)="removeFromFavourites()" *ngIf="isFavourite">
-            <ion-icon name="star"></ion-icon>
-            Unstar
-        </button>
-
-        <button class="half-width" (click)="share(item)">
-            <ion-icon name="share"></ion-icon>
-            Share
-        </button>
-    </div>
 </ion-content>
