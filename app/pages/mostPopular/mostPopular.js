@@ -1,6 +1,7 @@
 import {IonicApp, Page, NavController, NavParams} from 'ionic/ionic';
 import {ItemDetailsPage} from '../item-details/item-details';
 import {Giphy} from '../../providers/giphy';
+import {Ads} from '../../providers/ads';
 
 @Page({
     templateUrl: 'build/pages/mostPopular/mostPopular.html'

@@ -6,18 +6,19 @@ import {FavouritesPage} from './pages/favourites/favourites';
 
 import {Giphy} from './providers/giphy';
 import {FavouritesDB} from './providers/favouritesDB';
+import {Ads} from './providers/ads';
 
 @App({
     templateUrl: 'build/app.html',
-    providers: [Giphy, FavouritesDB]
+    providers: [Giphy, FavouritesDB, Ads]
 })
 class MyApp {
-    constructor(app:IonicApp, platform:Platform) {
+    constructor(app:IonicApp, platform:Platform, ads:Ads) {
         this.app = app;
         this.platform = platform;
+        this.ads = ads;
         this.initializeApp();
 
-        // set our app's pages
         this.pages = [
             {title: 'Top GIFs', component: MostPopularPage},
             {title: 'Search', component: SearchPage},

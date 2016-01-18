@@ -33,7 +33,8 @@
       "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
       "id": "cordova-plugin-x-socialsharing"
     },
-    "cordova-sqlite-storage"
+    "cordova-sqlite-storage",
+    "cordova-plugin-admobpro"
   ],
   "cordovaPlatforms": [
     "android",
