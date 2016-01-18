@@ -20,7 +20,7 @@ class MyApp {
         this.initializeApp();
 
         this.pages = [
-            {title: 'Top GIFs', component: MostPopularPage},
+            {title: 'Top Gifs', component: MostPopularPage},
             {title: 'Search', component: SearchPage},
             {title: 'Favourites', component: FavouritesPage}
         ];
