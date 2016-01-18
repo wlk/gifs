@@ -13,14 +13,11 @@ export class Giphy {
 
     initTop() {
         if (this.data) {
-            console.log("initTop - from cache");
             return Promise.resolve(this.data);
         }
-        console.log("initTop - making new http call");
         return new Promise(resolve => {
             this.http.get('http://api.giphy.com/v1/gifs/trending?api_key=' + this.apiKey + '&limit=' + this.topLimit + '&offset=' + this.topOffset)
                 .subscribe(res => {
-                        console.log("getTopGifs - http returned OK");
                         this.data = res.json().data;
                         resolve(this.data);
                     },
@@ -34,7 +31,6 @@ export class Giphy {
         return new Promise(resolve => {
             this.http.get('http://api.giphy.com/v1/gifs/search?api_key=' + this.apiKey + '&limit=' + this.topLimit + '&offset=' + this.topOffset + '&q=' + query)
                 .subscribe(res => {
-                        console.log("search - http returned OK");
                         resolve(res.json().data);
                     },
                     error => {

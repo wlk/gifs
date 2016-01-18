@@ -24,11 +24,8 @@ export class MostPopularPage {
     }
 
     updateList() {
-        console.log("updateList");
-
         this.giphy.initTop().then(data => {
             this.gifs = data;
-            console.log("updateList returned");
         });
     }
 

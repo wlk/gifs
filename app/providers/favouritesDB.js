@@ -45,7 +45,7 @@ export class FavouritesDB {
                     "VALUES('" + gif.id + "', '" + gif.url + "','" + gif.images.downsized.url + "','" + gif.images.original.url + "','" + gif.images.fixed_width_still.url + "') ")
                 .then(
                     (data) => {
-                        console.log(JSON.stringify(data.res));
+                        console.log("INSERT OK");
                     },
                     (error) => {
                         console.log("ERROR -> " + JSON.stringify(error.err));
@@ -55,7 +55,6 @@ export class FavouritesDB {
 
     removeFromFavourites(gif) {
         this.platform.ready().then(() => {
-            console.log("removing gif from favourites");
             this.storage.query("DELETE FROM favourites WHERE id = '" + gif.id + "'");
         });
     }
