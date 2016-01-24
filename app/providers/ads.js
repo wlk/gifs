@@ -8,6 +8,8 @@ export class Ads {
         this.platform = platform;
         this.admobid = {};
 
+        this.testing = true;
+
         this.platform.ready().then(() => {
             if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
                 this.admobid = {
@@ -28,6 +30,7 @@ export class Ads {
 
             if (AdMob) {
                 AdMob.createBanner({
+                    isTesting: this.testing,
                     adId: this.admobid.banner,
                     position: AdMob.AD_POSITION.TOP_CENTER,
                     autoShow: true
@@ -47,7 +50,7 @@ export class Ads {
     preloadInterstitial() {
         console.log("preloadInterstitial");
 
-        AdMob.prepareInterstitial({adId: this.admobid.interstitial, autoShow: false});
+        AdMob.prepareInterstitial({adId: this.admobid.interstitial, autoShow: false, isTesting: this.testing});
     }
 
     maybeShowInterstitial() {
