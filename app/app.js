@@ -35,7 +35,7 @@ class MyApp {
             }
 
             if (typeof analytics !== 'undefined') {
-                if (device.platform === "Android") {
+                if (/(android)/i.test(navigator.userAgent)) {
                     analytics.startTrackerWithId("UA-54524356-18"); //Android
                 } else {
                     analytics.startTrackerWithId("UA-54524356-19"); //iOS
