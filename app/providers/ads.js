@@ -57,7 +57,7 @@ export class Ads {
         this.platform.ready().then(() => {
             console.log("maybeShowInterstitial");
 
-            if (this.sessionGifViews >= 7 && this.sessionGifViews % 7 == 0) {
+            if (this.sessionGifViews >= 8 && this.sessionGifViews % 8 == 0) {
                 AdMob.showInterstitial();
                 this.preloadInterstitial();
             }
