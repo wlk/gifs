@@ -20,7 +20,7 @@
     "babylon": "^6.3.25",
     "strip-sourcemap-loader": "0.0.1"
   },
-  "name": "Gif Browser",
+  "name": "GifBrowser",
   "description": "Free Gif Browser",
   "cordovaPlugins": [
     "cordova-plugin-device",
