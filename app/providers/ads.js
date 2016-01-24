@@ -4,6 +4,7 @@ import {Platform} from 'ionic/ionic';
 @Injectable()
 export class Ads {
     constructor(platform:Platform) {
+        this.sessionGifViews = 0;
         this.platform = platform;
         this.admobid = {};
 
@@ -11,7 +12,7 @@ export class Ads {
             if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
                 this.admobid = {
                     banner: 'ca-app-pub-5829945009169600/7279897964',
-                    interstitial: 'ca-app-pub-xxx/yyy' // TODO
+                    interstitial: 'ca-app-pub-5829945009169600/6050719960'
                 };
             } else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
                 this.admobid = {
@@ -31,6 +32,31 @@ export class Ads {
                     position: AdMob.AD_POSITION.TOP_CENTER,
                     autoShow: true
                 });
+
+                this.preloadInterstitial();
+            }
+        });
+    }
+
+    registerItemView() {
+        console.log("registerItemView");
+        this.sessionGifViews++;
+        this.maybeShowInterstitial();
+    }
+
+    preloadInterstitial() {
+        console.log("preloadInterstitial");
+
+        AdMob.prepareInterstitial({adId: this.admobid.interstitial, autoShow: false});
+    }
+
+    maybeShowInterstitial() {
+        this.platform.ready().then(() => {
+            console.log("maybeShowInterstitial");
+
+            if (this.sessionGifViews >= 7 && this.sessionGifViews % 7 == 0) {
+                AdMob.showInterstitial();
+                this.preloadInterstitial();
             }
         });
     }

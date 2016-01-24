@@ -1,11 +1,12 @@
 import {Page, NavParams, Storage, SqlStorage, Platform} from 'ionic/ionic';
 import {FavouritesDB} from '../../providers/favouritesDB';
+import {Ads} from '../../providers/ads';
 
 @Page({
     templateUrl: 'build/pages/item-details/item-details.html'
 })
 export class ItemDetailsPage {
-    constructor(navParams:NavParams, platform:Platform, favourites:FavouritesDB) {
+    constructor(navParams:NavParams, platform:Platform, favourites:FavouritesDB, ads:Ads) {
         if (typeof analytics !== 'undefined') {
             analytics.trackView("ItemDetailsPage view");
         }
@@ -15,6 +16,8 @@ export class ItemDetailsPage {
         this.gif = navParams.data;
         this.favourites = favourites;
         this.isFavourite = null;
+
+        ads.registerItemView();
 
         this.checkIsFavourite();
     }

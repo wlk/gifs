@@ -27,7 +27,6 @@ export class FavouritesDB {
     isFavourite(gifId) {
         return new Promise(resolve => {
             this.platform.ready().then(() => {
-                console.log("is favourite");
                 this.storage.query("SELECT id FROM favourites WHERE id = '" + gifId + "'").then((data) => {
                         resolve(data.res.rows.length > 0);
                     },
