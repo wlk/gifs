@@ -8,7 +8,7 @@ export class Ads {
         this.platform = platform;
         this.admobid = {};
 
-        this.testing = true;
+        this.testing = false;
 
         this.platform.ready().then(() => {
             if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
@@ -42,21 +42,16 @@ export class Ads {
     }
 
     registerItemView() {
-        console.log("registerItemView");
         this.sessionGifViews++;
         this.maybeShowInterstitial();
     }
 
     preloadInterstitial() {
-        console.log("preloadInterstitial");
-
         AdMob.prepareInterstitial({adId: this.admobid.interstitial, autoShow: false, isTesting: this.testing});
     }
 
     maybeShowInterstitial() {
         this.platform.ready().then(() => {
-            console.log("maybeShowInterstitial");
-
             if (this.sessionGifViews >= 8 && this.sessionGifViews % 8 == 0) {
                 AdMob.showInterstitial();
                 this.preloadInterstitial();
