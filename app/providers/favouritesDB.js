@@ -17,7 +17,6 @@ export class FavouritesDB {
     createDB() {
         this.platform.ready().then(() => {
             this.storage.query('CREATE TABLE IF NOT EXISTS favourites (id TEXT PRIMARY KEY, url TEXT, downsized_url TEXT, original_url TEXT, fixed_width_still_url TEXT)').then((data) => {
-                console.log("TABLE CREATED -> " + JSON.stringify(data.res));
             }, (error) => {
                 console.log("ERROR -> " + JSON.stringify(error.err));
             });
@@ -39,12 +38,10 @@ export class FavouritesDB {
 
     addToFavourites(gif) {
         this.platform.ready().then(() => {
-            console.log("adding gif to favourites");
             this.storage.query("INSERT INTO favourites (id, url, downsized_url, original_url, fixed_width_still_url) " +
                     "VALUES('" + gif.id + "', '" + gif.url + "','" + gif.images.downsized.url + "','" + gif.images.original.url + "','" + gif.images.fixed_width_still.url + "') ")
                 .then(
                     (data) => {
-                        console.log("INSERT OK");
                     },
                     (error) => {
                         console.log("ERROR -> " + JSON.stringify(error.err));

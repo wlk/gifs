@@ -8,7 +8,7 @@ export class Ads {
         this.platform = platform;
         this.admobid = {};
 
-        this.testing = false;
+        this.testing = true;
 
         this.platform.ready().then(() => {
             if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos

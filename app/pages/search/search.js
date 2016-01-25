@@ -22,7 +22,6 @@ export class SearchPage {
     }
 
     searchGIFs() {
-        console.log("searchGIFs");
         this.giphy.search(this.searchQuery).then(data => {
             this.gifs = data;
         });

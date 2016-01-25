@@ -22,7 +22,6 @@ export class Giphy {
                         resolve(this.data);
                     },
                     error => {
-                        console.log("unable to load gifs");
                     });
         });
     }
@@ -34,7 +33,6 @@ export class Giphy {
                         resolve(res.json().data);
                     },
                     error => {
-                        console.log("unable to search gifs");
                     });
         });
     }

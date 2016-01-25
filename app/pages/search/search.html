@@ -6,7 +6,7 @@
 </ion-navbar>
 
 <ion-content>
-    <ion-searchbar [(ngModel)]="searchQuery" (input)="searchGIFs()" placeholder="Search"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchQuery" (input)="searchGIFs)" placeholder="Search"></ion-searchbar>
 
     <ion-list [hidden]="shouldDisplayError()">
         <ion-item *ngFor="#gif of gifs" (click)="displayDetails(gif)">
