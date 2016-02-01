@@ -20,8 +20,8 @@
     "babylon": "^6.3.25",
     "strip-sourcemap-loader": "0.0.1"
   },
-  "name": "GifBrowser",
-  "description": "Free Gif Browser",
+  "name": "DailyGifs",
+  "description": "Daily Gifs",
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",
