@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "angular2": "2.0.0-beta.0",
+    "angular2": "2.0.0-beta.6",
     "babel-polyfill": "^6.3.14",
     "es6-promise": "3.0.2",
     "es6-shim": "0.33.13",
-    "ionic-framework": "2.0.0-alpha.49",
+    "ionic-framework": "2.0.0-beta.1",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.0",
-    "zone.js": "0.5.10"
+    "zone.js": "0.5.14"
   },
   "devDependencies": {
     "babel-core": "^6.3.21",
@@ -22,6 +22,13 @@
   },
   "name": "DailyGifs",
   "description": "Daily Gifs",
+  "author": "Wojciech Langiewicz <wlangiewicz@gmail.com> (http://www.wlangiewicz.com/)",
+  "homepage": "https://github.com/wlk/DailyGifs",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wlk/DailyGifs.git"
+  },
   "cordovaPlugins": [
     "cordova-plugin-device",
     "cordova-plugin-console",

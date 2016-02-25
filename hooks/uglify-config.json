@@ -2,7 +2,9 @@
     "alwaysRun": false,
     "recursiveFolderSearch": true,
     "foldersToProcess": [
-        "build"
+        "js",
+        "css",
+        "img"
     ],
     "uglifyJsOptions": {
         "compress": {
